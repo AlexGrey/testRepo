@@ -1,8 +1,8 @@
-var express = require('express'),
-    app = express();
+var http = require('http');
 
-app.use(express.static(__dirname + '/public'));
-
-app.listen(80, function(){
-    console.log("server start!");
+var server = http.createServer(function(req, res) {
+    res.writeHead(200);
+    res.end('Hello Http');
 });
+
+server.listen(80);
